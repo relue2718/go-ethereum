@@ -23,7 +23,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/relue2718/go-ethereum/common"
 )
 
 // The ABI holds information about a contract's context and available

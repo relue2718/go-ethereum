@@ -22,8 +22,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/relue2718/go-ethereum/core"
+	"github.com/relue2718/go-ethereum/log"
 	"github.com/olekukonko/tablewriter"
 )
 

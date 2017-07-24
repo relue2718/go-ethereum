@@ -22,8 +22,8 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/swarm/storage"
+	"github.com/relue2718/go-ethereum/log"
+	"github.com/relue2718/go-ethereum/swarm/storage"
 )
 
 // syncer parameters (global, not peer specific) default values

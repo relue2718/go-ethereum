@@ -41,7 +41,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/relue2718/go-ethereum/crypto"
 )
 
 var dumpEnc bool

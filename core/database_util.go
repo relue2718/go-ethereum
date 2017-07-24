@@ -25,13 +25,13 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/relue2718/go-ethereum/common"
+	"github.com/relue2718/go-ethereum/core/types"
+	"github.com/relue2718/go-ethereum/ethdb"
+	"github.com/relue2718/go-ethereum/log"
+	"github.com/relue2718/go-ethereum/metrics"
+	"github.com/relue2718/go-ethereum/params"
+	"github.com/relue2718/go-ethereum/rlp"
 )
 
 var (

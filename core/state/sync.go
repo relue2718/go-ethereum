@@ -20,9 +20,9 @@ import (
 	"bytes"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/trie"
+	"github.com/relue2718/go-ethereum/common"
+	"github.com/relue2718/go-ethereum/rlp"
+	"github.com/relue2718/go-ethereum/trie"
 )
 
 // StateSync is the main state synchronisation scheduler, which provides yet the

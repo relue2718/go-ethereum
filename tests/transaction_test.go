@@ -20,7 +20,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/relue2718/go-ethereum/params"
 )
 
 func TestTransaction(t *testing.T) {
