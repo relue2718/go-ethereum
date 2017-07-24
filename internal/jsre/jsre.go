@@ -23,6 +23,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"os"
 	"math/rand"
 	"time"
 
@@ -153,8 +154,33 @@ func (self *JSRE) runEventLoop() {
 		}
 		return otto.UndefinedValue()
 	}
+
+	check := func(e error) {
+		if e != nil {
+			panic(e)
+		}
+	}
+
+	// A little bit dirty hacking
+	writeFileSync := func(call otto.FunctionCall) otto.Value {
+		filepath, err := call.Argument(0).ToString()
+		check(err)
+		data, err := call.Argument(1).ToString()
+		check(err)
+		f, err := os.Create(filepath)
+		check(err)
+		defer f.Close()
+		bytes, err := f.WriteString(data)
+		check(err)
+		f.Sync()
+		value, err := call.Otto.ToValue(bytes)
+		check(err)
+		return value
+	}
+
 	vm.Set("_setTimeout", setTimeout)
 	vm.Set("_setInterval", setInterval)
+	vm.Set("_writeFileSync", writeFileSync)
 	vm.Run(`var setTimeout = function(args) {
 		if (arguments.length < 1) {
 			throw TypeError("Failed to execute 'setTimeout': 1 argument required, but only 0 present.");
@@ -166,6 +192,12 @@ func (self *JSRE) runEventLoop() {
 			throw TypeError("Failed to execute 'setInterval': 1 argument required, but only 0 present.");
 		}
 		return _setInterval.apply(this, arguments);
+	}`)
+	vm.Run(`var writeFileSync = function(args) {
+		if (arguments.length < 2) {
+			throw TypeError("Failed to execute 'writeFileSync': 2 arguments required.")
+		}
+		return _writeFileSync.apply(this, arguments);
 	}`)
 	vm.Set("clearTimeout", clearTimeout)
 	vm.Set("clearInterval", clearTimeout)
