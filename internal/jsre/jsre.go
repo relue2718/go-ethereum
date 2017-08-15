@@ -178,9 +178,23 @@ func (self *JSRE) runEventLoop() {
 		return value
 	}
 
+	// Another dirty hacking
+	readFileSync := func(call otto.FunctionCall) otto.Value {
+		filepath, err := call.Argument(0).ToString()
+		check(err)
+		b, err := ioutil.ReadFile(filepath)
+		check(err)
+		str := string(b)
+		fmt.Println(str)
+		value, err := call.Otto.ToValue(str)
+		check(err)
+		return value
+	}
+
 	vm.Set("_setTimeout", setTimeout)
 	vm.Set("_setInterval", setInterval)
 	vm.Set("_writeFileSync", writeFileSync)
+	vm.Set("_readFileSync", readFileSync)
 	vm.Run(`var setTimeout = function(args) {
 		if (arguments.length < 1) {
 			throw TypeError("Failed to execute 'setTimeout': 1 argument required, but only 0 present.");
@@ -198,6 +212,12 @@ func (self *JSRE) runEventLoop() {
 			throw TypeError("Failed to execute 'writeFileSync': 2 arguments required.")
 		}
 		return _writeFileSync.apply(this, arguments);
+	}`)
+	vm.Run(`var readFileSync = function(args) {
+		if (arguments.length < 1) {
+			throw TypeError("Failed to execute 'readFileSync': 1 argument required.")
+		}
+		return _readFileSync.apply(this, arguments);
 	}`)
 	vm.Set("clearTimeout", clearTimeout)
 	vm.Set("clearInterval", clearTimeout)
