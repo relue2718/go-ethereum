@@ -186,6 +186,19 @@ func (self *JSRE) runEventLoop() {
 		return value
 	}
 
+	// Another dirty hacking
+	readFileSync := func(call otto.FunctionCall) otto.Value {
+		filepath, err := call.Argument(0).ToString()
+		check(err)
+		b, err := ioutil.ReadFile(filepath)
+		check(err)
+		str := string(b)
+		fmt.Println(str)
+		value, err := call.Otto.ToValue(str)
+		check(err)
+		return value
+	}
+
 	vm.Set("_setTimeout", setTimeout)
 	vm.Set("_setInterval", setInterval)
 	vm.Set("_writeFileSync", writeFileSync)

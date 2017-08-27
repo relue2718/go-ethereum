@@ -32,7 +32,7 @@ import (
 var MetricsEnabledFlag = "metrics"
 
 // Enabled is the flag specifying if metrics are enable or not.
-var Enabled = false
+var Enabled = true
 
 // Init enables or disables the metrics system. Since we need this to run before
 // any other code gets to create meters and timers, we'll actually do an ugly hack

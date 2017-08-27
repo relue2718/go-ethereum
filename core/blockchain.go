@@ -47,6 +47,8 @@ import (
 
 var (
 	blockInsertTimer = metrics.NewTimer("chain/inserts")
+	blockBulkyInsertTimer = metrics.NewTimer("chain/bulky_inserts")
+
 
 	ErrNoGenesis = errors.New("Genesis not found in chain")
 )
@@ -1015,6 +1017,14 @@ func (bc *BlockChain) InsertChain(chain types.Blocks) (int, error) {
 			blockInsertTimer.UpdateSince(bstart)
 			events = append(events, ChainSideEvent{block})
 		}
+
+		blockBulkyInsertTimer.UpdateSince(bstart)
+
+		_mean := blockBulkyInsertTimer.Mean()
+		_stddev := blockBulkyInsertTimer.StdDev()
+		_count := blockBulkyInsertTimer.Count()
+		fmt.Printf("bstart: %v, Mean: %f, StdDev: %f, Count: %d\n", bstart, _mean, _stddev, _count)
+
 		stats.processed++
 		stats.usedGas += usedGas.Uint64()
 		stats.report(chain, i)
