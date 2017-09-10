@@ -161,14 +161,6 @@ func (self *JSRE) runEventLoop() {
 		}
 	}
 
-	readFileSync := func(call otto.FunctionCall) otto.Value {
-		filepath, err := call.Argument(0).ToString()
-		check(err)
-		file, err := os.Open(path)
-		check(err)
-		
-	}
-
 	// A little bit dirty hacking
 	writeFileSync := func(call otto.FunctionCall) otto.Value {
 		filepath, err := call.Argument(0).ToString()
