@@ -24,17 +24,17 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/ethereum/go-ethereum/ethstats"
-	"github.com/ethereum/go-ethereum/les"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/nat"
-	"github.com/ethereum/go-ethereum/params"
-	whisper "github.com/ethereum/go-ethereum/whisper/whisperv6"
+	"github.com/relue2718/go-ethereum/core"
+	"github.com/relue2718/go-ethereum/eth"
+	"github.com/relue2718/go-ethereum/eth/downloader"
+	"github.com/relue2718/go-ethereum/ethclient"
+	"github.com/relue2718/go-ethereum/ethstats"
+	"github.com/relue2718/go-ethereum/les"
+	"github.com/relue2718/go-ethereum/node"
+	"github.com/relue2718/go-ethereum/p2p"
+	"github.com/relue2718/go-ethereum/p2p/nat"
+	"github.com/relue2718/go-ethereum/params"
+	whisper "github.com/relue2718/go-ethereum/whisper/whisperv6"
 )
 
 // NodeConfig represents the collection of configuration values to fine tune the Geth

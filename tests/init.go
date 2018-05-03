@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/relue2718/go-ethereum/params"
 )
 
 // This table defines supported forks and their chain config.

@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/relue2718/go-ethereum/log"
 )
 
 // deployExplorer creates a new block explorer based on some user input.

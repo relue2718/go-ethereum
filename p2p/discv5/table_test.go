@@ -27,8 +27,8 @@ import (
 	"testing/quick"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/relue2718/go-ethereum/common"
+	"github.com/relue2718/go-ethereum/crypto"
 )
 
 type nullTransport struct{}

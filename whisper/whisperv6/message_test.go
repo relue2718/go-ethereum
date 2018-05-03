@@ -23,9 +23,9 @@ import (
 	mrand "math/rand"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/relue2718/go-ethereum/common/hexutil"
+	"github.com/relue2718/go-ethereum/crypto"
+	"github.com/relue2718/go-ethereum/rlp"
 )
 
 func generateMessageParams() (*MessageParams, error) {

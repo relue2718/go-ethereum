@@ -7,9 +7,9 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
+	"github.com/relue2718/go-ethereum/common"
+	"github.com/relue2718/go-ethereum/common/hexutil"
+	"github.com/relue2718/go-ethereum/common/math"
 )
 
 var _ = (*ttTransactionMarshaling)(nil)

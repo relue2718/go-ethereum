@@ -20,7 +20,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/relue2718/go-ethereum/common"
 )
 
 func TestSet(t *testing.T) {

@@ -20,12 +20,12 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/relue2718/go-ethereum/consensus/ethash"
+	"github.com/relue2718/go-ethereum/core/types"
+	"github.com/relue2718/go-ethereum/core/vm"
+	"github.com/relue2718/go-ethereum/crypto"
+	"github.com/relue2718/go-ethereum/ethdb"
+	"github.com/relue2718/go-ethereum/params"
 )
 
 func ExampleGenerateChain() {

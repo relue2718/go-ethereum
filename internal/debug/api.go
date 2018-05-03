@@ -33,7 +33,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/relue2718/go-ethereum/log"
 )
 
 // Handler is the global debugging handler.
